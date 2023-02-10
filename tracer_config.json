@@ -1,0 +1,117 @@
+{
+    "segmentation": {
+        
+        "labels_path": "cache/labels.npy",
+        "median disk radius": 50,
+        "rescaling factor": 0.4,
+        "region_size": 30,
+        "dilation size": 0,
+        "boundary size": 60,
+        "verbosity": true,
+
+        "marker_points": [
+            [520,2830],
+            [837,110],
+            [938,2755],
+            [1666,4653],
+            [2030,1471],
+            [2257,5268],
+            [3188,5297],
+            [3923,4878],
+            [55, 2916],
+            [2621, 1412],
+            [753, 6957]
+        ],
+        
+        "water": [0, 2],
+        "esf": [1, 9],
+        "c": [4, 6, 7]
+
+    },
+
+    "compaction": {
+        "apply": false,
+        "N_patches": [20, 10],
+        "rel_overlap": 0.1,
+        "max_features": 200,
+        "tol": 0.05
+    },
+
+    "co2": {
+        "cleaning_filter": "cache/cleaning_filter_negative_key.npy",
+
+        "color": "negative-key",
+
+        "restoration resize": 0.5,
+        "restoration smoothing method": "isotropic bregman",
+        "restoration smoothing weight": 0.1,
+        "restoration smoothing eps": 1e-4,
+        "restoration smoothing max_num_iter": 200,
+
+        "off prior threshold dynamic": false,
+        "off prior threshold value": 0.0,
+
+        "prior threshold dynamic": true,
+        "prior threshold method": "tailored global min",
+        "prior threshold value": 0.5,
+        "prior threshold value min": 0.01,
+        "prior threshold value max": 1.0,
+
+        "prior resize": 0.5,
+        
+        "prior smoothing method": "isotropic bregman",
+        "prior smoothing weight": 0.05,
+        "prior smoothing eps": 1e-4,
+        "prior smoothing max_num_iter": 200,
+
+        "posterior": true,
+        "posterior criterion": "value",
+        "posterior threshold": 0.0,
+
+        "verbosity": 0
+    },
+
+    "co2(g)": {
+        "cleaning_filter": "cache/cleaning_filter_hsv.npy",
+
+        "color": "hsv",
+        "hue lower bound": 0.0,
+        "hue upper bound": 0.1,
+        "saturation lower bound": 0.0,
+        "saturation upper bound": 1.0,
+
+        "restoration resize x": 0.2,
+        "restoration resize y": 1.0,
+        "restoration smoothing method": "isotropic bregman",
+        "restoration smoothing weight": 0.01,
+        "restoration smoothing eps": 1e-4,
+        "restoration smoothing max_num_iter": 100,
+
+        "off prior threshold dynamic": false,
+        "off prior threshold value": 0.2,
+
+        "prior threshold dynamic": true,
+        "prior threshold method": "tailored global min",
+        "prior threshold value": 0.5,
+        "prior threshold value min": 0.01,
+        "prior threshold value max": 1.0,
+
+        "comment on min area size and max hole size": "needed due to inaccurate segmentation of the geometry - the interfaces are not accurate, while the signal registration is - this results in boundary effects mitigated by removing small objects",
+        "prior remove small objects size": 100,
+        "prior fill holes size": 1000,
+
+        "prior resize x": 0.2,
+        
+        "prior smoothing method": "isotropic bregman",
+        "prior smoothing weight": 0.01,
+        "prior smoothing eps": 1e-4,
+        "prior smoothing max_num_iter": 100,
+
+        "posterior": true,
+        "posterior criterion": "value",
+        "posterior threshold": 0.0,
+
+        "verbosity": 1
+    }
+
+}
